@@ -1,5 +1,9 @@
 package generic
 
+fun main() {
+  val cage: Cage2<out Fish> = Cage2<GoldFish>()
+}
+
 class Cage2<T> {
   private val animals: MutableList<T> = mutableListOf()
 
@@ -11,7 +15,11 @@ class Cage2<T> {
     this.animals.add(animal)
   }
 
-  fun moveFrom(cage: Cage2<T>) {
-    this.animals.addAll(cage.animals)
+  fun moveFrom(otherCage: Cage2<out T>) {
+    this.animals.addAll(otherCage.animals)
+  }
+
+  fun moveTo(otherCage: Cage2<in T>) {
+    otherCage.animals.addAll(this.animals)
   }
 }
