@@ -21,9 +21,6 @@ fun main() {
   println("ABC")
 }
 
-fun compute(num1: Int, num2: Int, op: (Int, Int) -> Int): Int {
-  return op(num1, num2)
-}
 
 fun iterate(numbers: List<Int>, exec: (Int) -> Unit) {
   for (number in numbers) {
