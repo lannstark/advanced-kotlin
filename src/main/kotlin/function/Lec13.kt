@@ -22,11 +22,11 @@ fun main() {
 }
 
 
-fun iterate(numbers: List<Int>, exec: (Int) -> Unit) {
-  for (number in numbers) {
-    exec(number)
-  }
-}
+//fun iterate(numbers: List<Int>, exec: (Int) -> Unit) {
+//  for (number in numbers) {
+//    exec(number)
+//  }
+//}
 
 fun calculate(num1: Int, num2: Int, oper: Operator) = oper.calcFun(num1, num2)
 
