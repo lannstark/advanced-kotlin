@@ -28,11 +28,11 @@ fun main() {
 //  }
 //}
 
-fun calculate(num1: Int, num2: Int, oper: Operator) = oper.calcFun(num1, num2)
+fun calculate(num1: Int, num2: Int, oper: Operator): Int = oper(num1, num2)
 
 enum class Operator(
   private val oper: Char,
-  val calcFun: (Int, Int) -> Int,
+  private val calcFun: (Int, Int) -> Int,
 ) {
   PLUS('+', { a, b -> a + b }),
   MINUS('-', { a, b -> a - b }),
@@ -44,5 +44,10 @@ enum class Operator(
       a / b
     }
   }),
+  ;
+
+  operator fun invoke(num1: Int, num2: Int): Int {
+    return this.calcFun(num1, num2)
+  }
 
 }
