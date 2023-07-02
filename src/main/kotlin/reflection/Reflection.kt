@@ -56,15 +56,3 @@ fun main() {
 
 }
 
-class GoldFish(val name: String) {
-
-  fun print() {
-    println("금붕어 이름은 ${name}입니다.")
-  }
-
-}
-
-
-fun castToGoldFish(obj: Any): GoldFish {
-  return GoldFish::class.cast(obj)
-}
