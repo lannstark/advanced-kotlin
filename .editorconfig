@@ -1,0 +1,15 @@
+root = true
+
+[*]
+indent_size = 2
+indent_style = space
+
+tab_width = 2
+end_of_line = lf
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+[*.{kt, kts}]
+kotlin_code_style = ktlint_official
+ktlint_standard_no-blank-line-before-rbrace = false
